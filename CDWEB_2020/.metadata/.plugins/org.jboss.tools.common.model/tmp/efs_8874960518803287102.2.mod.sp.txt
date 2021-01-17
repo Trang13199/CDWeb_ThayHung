@@ -1,0 +1,268 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>About Us || Witter Multipage Responsive Template</title>
+
+</head>
+<body>
+	<!-- Start header section -->
+	<jsp:directive.include file="header.jsp" />
+	<!-- / header section -->
+
+
+
+	<!-- Breadcrumbs Area Start -->
+	<div class="breadcrumbs-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="breadcrumbs">
+						<h2>Cá nhân</h2>
+						<ul class="breadcrumbs-list">
+							<li><a title="Return to Home"
+								href="<%=request.getContextPath()%>">Trang ch?</a></li>
+							<li>Cá nhân</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcrumbs Area Start -->
+	<!-- My Account Area Start -->
+	<div class="my-account-area section-padding">
+		<div class="container">
+			<div class="section-title2">
+				<p>Chào m?ng b?n ð?n v?i tài kho?n c?a b?n. T?i ðây b?n có th?
+					qu?n l? t?t c? các thông tin cá nhân và ðõn ð?t hàng c?a b?n.</p>
+			</div>
+			<div class="row">
+				<div class="addresses-lists">
+					<div class="col-xs-12 col-sm-6 col-lg-6">
+						<div class="panel-group" id="accordion" role="tablist"
+							aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingOne">
+									<h4 class="panel-title">
+										<a role="button" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseOne"
+											aria-expanded="true" aria-controls="collapseOne"> <i
+											class="fa fa-building"></i> <span>Thông tin cá nhân</span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseOne" class="panel-collapse collapse in"
+									role="tabpanel" aria-labelledby="headingOne">
+									<div class="panel-body">
+										<div class="coupon-info">
+											<h1 class="heading-title">Thông tin cá nhân c?a b?n</h1>
+											<p class="coupon-text">H?y ch?c ch?n ð? c?p nh?t thông
+												tin cá nhân c?a b?n n?u nó ð? thay ð?i.</p>
+											<p class="required">*B?t bu?c</p>
+											<form action="my_account" method="post" modelAttribute="user">
+												<label>Username </label>
+												<p class="form-row">
+													<input type="text" placeholder="Username *"
+														value="${user.username }" name="username" />
+												</p>
+												<label>Ð?a ch? email </label>
+												<p class="form-row">
+													<input type="text" placeholder="Ð?a ch? email *"
+														value="${user.email }" name="email" />
+												</p>
+												<label>Ð?a ch? </label>
+												<p class="form-row">
+													<input type="text" placeholder="Ð?a ch? *" name="address"
+														value="${user.address }" />
+												</p>
+												<label>S? ði?n tho?i </label>
+												<p class="form-row">
+													<input type="text" placeholder="S? ði?n tho?i *"
+														name="phone" value="${user.phone }" />
+												</p>
+
+												<label>Gi?i tính </label>
+												<p class="form-row">
+													<input type="text" name="gender" value="${user.gender }"
+														class="form-control" />
+												</p>
+
+												<label>Ngày sinh </label>
+												<p class="form-row">
+													<input type="text" name="dateOfBirth"
+														value="${user.dateOfBirth }" />
+												</p>
+
+												<p>Thay ð?i m?t kh?u</p>
+												<p class="form-row">
+													<input type="password" name="current-pass"
+														placeholder="M?t kh?u hi?n t?i" value="${user.password }" />
+												</p>
+												<p class="form-row">
+													<input type="password" name="password"
+														placeholder="M?t kh?u m?i" />
+												</p>
+												<p class="form-row">
+													<input type="password" name="request"
+														placeholder="Nh?p l?i m?t kh?u m?i" />
+												</p>
+												<div class="checkbox">
+													<label> <span><input type="checkbox"
+															checked="checked" /></span> Ðãng k? nh?n b?n tin c?a chúng tôi!
+													</label>
+												</div>
+												<a title="Save" class="btn button button-small"
+													href="<%=request.getContextPath()%>"> <span> C?p
+														nh?t <i class="fa fa-chevron-right"></i>
+												</span>
+												</a> <input type="submit" value="ÐôÒi mâòt khâÒu" />
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="headingTwo">
+									<h4 class="panel-title">
+										<a class="collapsed" role="button" data-toggle="collapse"
+											data-parent="#accordion" href="#collapseTwo"
+											aria-expanded="false" aria-controls="collapseTwo"> <i
+											class="fa fa-list-ol"></i> <span>Qu?n l? ðõn hàng</span>
+										</a>
+									</h4>
+								</div>
+								<div id="collapseTwo" class="panel-collapse collapse"
+									role="tabpanel" aria-labelledby="headingTwo">
+									<div class="panel-body">
+										<div class="coupon-info">
+											<h1 class="heading-title">L?CH S? ÐÕN HÀNG</h1>
+											<p class="coupon-text">Dý?i ðây là các ðõn ð?t hàng b?n
+												ð? ð?t k? t? khi tài kho?n c?a b?n ðý?c t?o.</p>
+											<div class="order-history">
+												<p class="alert">B?n chýa có ðõn hàng nào.</p>
+
+												<table id="dataTable"
+													class="table table-bordered table-condensed table-hover table-striped dataTable no-footer"
+													role="grid" aria-describedby="dataTable_info">
+													<thead>
+														<tr role="row">
+															<th class="sorting_asc" tabindex="0"
+																aria-controls="dataTable" rowspan="1" colspan="1"
+																aria-sort="ascending"
+																aria-label="ID: activate to sort column descending"
+																style="width: 135px;">Id Bill</th>
+															<th class="sorting_asc" tabindex="0"
+																aria-controls="dataTable" rowspan="1" colspan="1"
+																aria-sort="ascending"
+																aria-label="ID: activate to sort column descending"
+																style="width: 548px;">H?nh ?nh</th>
+															<th class="sorting_asc" tabindex="0"
+																aria-controls="dataTable" rowspan="1" colspan="1"
+																aria-sort="ascending"
+																aria-label="ID: activate to sort column descending"
+																style="width: 548px;">Tên saìch</th>
+															<th class="sorting" tabindex="0"
+																aria-controls="dataTable" rowspan="1" colspan="1"
+																aria-label="Email: activate to sort column ascending"
+																style="width: 223px;">Sôì lýõòng</th>
+															<th class="sorting" tabindex="0"
+																aria-controls="dataTable" rowspan="1" colspan="1"
+																aria-label="Email: activate to sort column ascending"
+																style="width: 462px;">Giaì</th>
+														</tr>
+													</thead>
+													<c:forEach items="${receipts}" var="rs">
+														<tbody>
+
+															<tr role="row" class="odd">
+																<td class="sorting_1">${rs.receipt.receiptId }</td>
+																<td class="sorting_1"><img
+																	src="<%=request.getContextPath()%>${rs.product.hinhAnh}" /></td>
+																<td class="sorting_1">${rs.product.tenSach }</td>
+																<td>${rs.receiptItemQuantity }</td>
+																<td>${rs.receiptItemPrice }00VNÐ</td>
+															</tr>
+														</tbody>
+													</c:forEach>
+												</table>
+												<div class="progress" style="width: 85%; margin: auto;">
+													<div
+														class="progress-bar progress-bar-striped progress-bar-animated bg-danger"
+														role="progressbar" aria-valuenow="75" aria-valuemin="0"
+														aria-valuemax="100"></div>
+												</div>
+												<div
+													style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 14px; text-align: center; width: 100%; margin: auto;">
+													<p style="background-color: transparent; color: black">Ð?t
+														hàng thành công</p>
+													<p style="background-color: transparent; color: black">Ðang
+														l?y hàng</p>
+													<p style="background-color: transparent; color: black">Ðóng
+														gói xong</p>
+													<p style="background-color: transparent; color: black">Bàn
+														giao v?n chuy?n</p>
+													<p style="background-color: transparent; color: black">Giao
+														hàng thành công</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-6 col-lg-6">
+						<div class="myaccount-link-list">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="#"> <i class="fa fa-heart"></i> <span>Danh
+												sách yêu thích c?a tôi</span>
+										</a>
+									</h4>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a href="<%=request.getContextPath()%>/shopping_cart"> <i
+											class="flaticon-shop"></i> <span>Gi? hàng c?a tôi</span>
+										</a>
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="create-account-button pull-left">
+						<a href="<%=request.getContextPath()%>"
+							class="btn button button-small" title="Home"> <span> <i
+								class="fa fa-chevron-left"></i> Tr? v?
+						</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- My Account Area End -->
+
+
+
+
+	<!--FOOTER -->
+
+	<jsp:directive.include file="footer.jsp" />
+
+	<!-- END FOOTER -->
+
+</body>
+</html>
